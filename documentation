@@ -1,1 +1,13 @@
 create a section named "custom_countdown_bar.liquid"
+create a file in assets named "custom_countdown.css"
+create a file in assets named "custom_countdown.js"
+
+then call .css and .js file in theme.liquid  in the following way:
+
+<link rel="preload" href="{{ 'custom_countdown.js' | asset_url }}" as="script">
+<link rel="stylesheet" href="{{ 'custom_countdown.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
+  
+  
+  we can add these two file(.css and .js) in another way too:
+   {{ 'custom_countdown.css' | asset_url | stylesheet_tag }} 
+   {{ 'custom_countdown.js' | asset_url | script_tag }}  
